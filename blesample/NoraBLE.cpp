@@ -1,6 +1,6 @@
 /****************************************
- * 野良ハック B1144向けBLEライブラリ Ver.1.0.1
- * 2019/9/6 だーいー
+ * 野良ハック B1144向けBLEライブラリ Ver.1.2
+ * 2019/9/13 だーいー
  *****************************************/
 #include "BLEDevice.h"
 #include <string.h>
@@ -322,7 +322,7 @@ int CNoraBLE::MakeData(void)
   for(int i = 0; i < m_datalen; i++){
     memset(font, '\0', sizeof(font));
      // 1文字分の美咲フォントパターンを取得
-    if((p = getFontData(font, p)) == NULL){
+    if((p = getFontData(font, p, true)) == NULL){
       break;
     }
     // 1文字分のパターンをデータ領域に設定
